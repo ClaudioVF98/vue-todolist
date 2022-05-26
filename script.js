@@ -27,10 +27,13 @@ const todoList = new Vue({
     },
     methods : {
         addItem() {
+            const task = {
+                text : this.newTodo,
+                done : false
+            }
             if(this.newTodo !== "") {
-                this.todos.push(this.newTodo);
-                this.newTodo = "";
-
+                this.todos.push(task);
+                this.newTodo = ""
             }
         },
         deleteItem(index) {
